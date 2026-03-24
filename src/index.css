@@ -2,95 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 225 25% 5%;
+    --foreground: 210 40% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 225 30% 8%;
+    --card-foreground: 210 40% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 225 30% 8%;
+    --popover-foreground: 210 40% 92%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 210 100% 56%;
+    --primary-foreground: 225 25% 5%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 270 80% 60%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 225 20% 14%;
+    --muted-foreground: 215 20% 55%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 160 80% 45%;
+    --accent-foreground: 225 25% 5%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 225 20% 18%;
+    --input: 225 20% 18%;
+    --ring: 210 100% 56%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --neon-blue: 210 100% 56%;
+    --neon-violet: 270 80% 60%;
+    --neon-emerald: 160 80% 45%;
+    --neon-amber: 38 92% 55%;
+    --neon-red: 0 72% 55%;
+
+    --glass-bg: 225 30% 10% / 0.6;
+    --glass-border: 210 40% 92% / 0.08;
+    --glass-glow-blue: 210 100% 56% / 0.15;
+    --glass-glow-violet: 270 80% 60% / 0.15;
+
+    --font-display: 'Orbitron', monospace;
+    --font-heading: 'Rajdhani', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
+
+    --sidebar-background: 225 30% 8%;
+    --sidebar-foreground: 210 40% 92%;
+    --sidebar-primary: 210 100% 56%;
+    --sidebar-primary-foreground: 225 25% 5%;
+    --sidebar-accent: 225 20% 14%;
+    --sidebar-accent-foreground: 210 40% 92%;
+    --sidebar-border: 225 20% 18%;
+    --sidebar-ring: 210 100% 56%;
   }
 }
 
@@ -101,5 +70,109 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-xl border backdrop-blur-xl;
+    background: hsla(var(--glass-bg));
+    border-color: hsla(var(--glass-border));
+  }
+
+  .glass-panel-glow-blue {
+    @apply glass-panel;
+    box-shadow: 0 0 30px hsla(var(--glass-glow-blue)),
+                inset 0 1px 0 hsla(var(--glass-border));
+  }
+
+  .glass-panel-glow-violet {
+    @apply glass-panel;
+    box-shadow: 0 0 30px hsla(var(--glass-glow-violet)),
+                inset 0 1px 0 hsla(var(--glass-border));
+  }
+
+  .neon-text-blue {
+    @apply text-primary;
+    text-shadow: 0 0 10px hsl(var(--neon-blue) / 0.5),
+                 0 0 30px hsl(var(--neon-blue) / 0.3);
+  }
+
+  .neon-text-violet {
+    color: hsl(var(--neon-violet));
+    text-shadow: 0 0 10px hsl(var(--neon-violet) / 0.5),
+                 0 0 30px hsl(var(--neon-violet) / 0.3);
+  }
+
+  .neon-text-emerald {
+    color: hsl(var(--neon-emerald));
+    text-shadow: 0 0 10px hsl(var(--neon-emerald) / 0.5),
+                 0 0 30px hsl(var(--neon-emerald) / 0.3);
+  }
+
+  .neon-text-amber {
+    color: hsl(var(--neon-amber));
+    text-shadow: 0 0 10px hsl(var(--neon-amber) / 0.5),
+                 0 0 30px hsl(var(--neon-amber) / 0.3);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .intelligence-grid {
+    background-image:
+      linear-gradient(hsla(var(--glass-border)) 1px, transparent 1px),
+      linear-gradient(90deg, hsla(var(--glass-border)) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .scan-line {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      hsl(var(--neon-blue) / 0.03) 50%,
+      transparent 100%
+    );
+    animation: scan 8s linear infinite;
+  }
+
+  @keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes data-stream {
+    0% { transform: translateY(-100%); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
   }
 }
